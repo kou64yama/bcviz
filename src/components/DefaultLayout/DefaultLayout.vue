@@ -1,6 +1,6 @@
 <template>
   <v-app-bar>
-    <span>TANITA BC Visualizer</span>
+    <span>Bcviz</span>
     <router-link to="/">Home</router-link>
     <router-link to="/data">Data</router-link>
   </v-app-bar>

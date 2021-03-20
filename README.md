@@ -1,6 +1,6 @@
-# TANITA BC Visualizer
+# Bcviz
 
-Data visualizer for TANITA Body Composition Analyzer.
+Data visualizer for Body Composition Analyzer.
 
 [Vite](https://vitejs.dev), [Vue 3](https://v3.vuejs.org),
 [Chart.js](https://www.chartjs.org), [Dexie.js](https://dexie.org), ...
