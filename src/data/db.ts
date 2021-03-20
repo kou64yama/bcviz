@@ -52,7 +52,7 @@ class Database extends Dexie {
   public items!: Dexie.Table<BcItem, string>;
 
   public constructor() {
-    super('tanita-bc-visualizer');
+    super('bcviz');
     this.version(1).stores({
       raws: 'id',
       items: 'id,timestamp',
