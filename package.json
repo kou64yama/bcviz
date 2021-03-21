@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "chart.js": "^2.9.4",
+    "date-fns": "^2.19.0",
     "dexie": "^3.0.3",
     "http-errors": "^1.8.0",
+    "numeral": "^2.0.6",
     "uuid": "^8.3.2",
     "vue": "^3.0.5",
     "vue-router": "^4.0.4"
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@types/chart.js": "^2.9.31",
     "@types/http-errors": "^1.8.0",
+    "@types/numeral": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
     "@vitejs/plugin-vue": "^1.1.4",

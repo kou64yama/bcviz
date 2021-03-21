@@ -1,13 +1,16 @@
 dependencies:
   chart.js: 2.9.4
+  date-fns: 2.19.0
   dexie: 3.0.3
   http-errors: 1.8.0
+  numeral: 2.0.6
   uuid: 8.3.2
   vue: 3.0.7
   vue-router: 4.0.4_vue@3.0.7
 devDependencies:
   '@types/chart.js': 2.9.31
   '@types/http-errors': 1.8.0
+  '@types/numeral': 2.0.1
   '@typescript-eslint/eslint-plugin': 4.16.1_db289a69270a1846aefbe377c7369d6d
   '@typescript-eslint/parser': 4.16.1_eslint@7.21.0+typescript@4.2.3
   '@vitejs/plugin-vue': 1.1.5_@vue+compiler-sfc@3.0.7
@@ -315,6 +318,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-my6fLBvpY70KattTNzYOK6KU1oR1+UCz9ug/JbcF5UrEmeCt9P7DV2t7L8+t18mMPINqGQCE4O8PLOPbI84gxw==
+  /@types/numeral/2.0.1:
+    dev: true
+    resolution:
+      integrity: sha512-f0LSiBOMnSGILpylIZzYXtnHbhosjPI916W9AkB171MnY+7IVuXHfb7Ohv3AkaDeOieiq74f6vy9ROMxRhfZ1Q==
   /@types/parse-json/4.0.0:
     dev: true
     resolution:
@@ -915,6 +922,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-61FBWoDHp/gRtsoDkq/B1nWrCUG/ok1E3tUrcNbZjsE9Cxd9yzUirjS3+nAATB8U4cTtaQmAHbNndoFz5L6C9Q==
+  /date-fns/2.19.0:
+    dev: false
+    engines:
+      node: '>=0.11'
+    resolution:
+      integrity: sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg==
   /de-indent/1.0.2:
     dev: true
     resolution:
@@ -1784,6 +1797,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==
+  /numeral/2.0.6:
+    dev: false
+    resolution:
+      integrity: sha1-StCAk21EPCVhrtnyGX7//iX05QY=
   /object-assign/4.1.1:
     dev: true
     engines:
@@ -2510,6 +2527,7 @@ packages:
 specifiers:
   '@types/chart.js': ^2.9.31
   '@types/http-errors': ^1.8.0
+  '@types/numeral': ^2.0.1
   '@typescript-eslint/eslint-plugin': ^4.4.0
   '@typescript-eslint/parser': ^4.4.0
   '@vitejs/plugin-vue': ^1.1.4
@@ -2517,6 +2535,7 @@ specifiers:
   '@vue/eslint-config-typescript': 7.0.0
   '@vuedx/typescript-plugin-vue': ^0.6.3
   chart.js: ^2.9.4
+  date-fns: ^2.19.0
   dexie: ^3.0.3
   eslint: ^7.12.1
   eslint-config-prettier: ^8.1.0
@@ -2524,6 +2543,7 @@ specifiers:
   http-errors: ^1.8.0
   husky: ^5.1.3
   lint-staged: ^10.5.4
+  numeral: ^2.0.6
   prettier: ^2.2.1
   typescript: ^4.1.3
   uuid: ^8.3.2

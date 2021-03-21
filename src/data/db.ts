@@ -1,29 +1,6 @@
 import Dexie from 'dexie';
 
 export interface Raw {
-  // '{0': string;
-  // '~0': string;
-  // '~1': string;
-  // '~2': string;
-  // '~3': string;
-  // MO: string;
-  // DT: string;
-  // Ti: string;
-  // Bt: string;
-  // GE: string;
-  // AG: string;
-  // Hm: string;
-  // Wk: string;
-  // MI: string;
-  // FW: string;
-  // mW: string;
-  // sW: string;
-  // bW: string;
-  // IF: string;
-  // rB: string;
-  // rA: string;
-  // ww: string;
-  // CS: string;
   id: string;
   data: string;
 }
