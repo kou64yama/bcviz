@@ -20,8 +20,11 @@ export default defineComponent({
 
 <style scoped>
 .datePicker {
-  border: 1px solid #ccc;
+  font: 16px/1.5 'Helvetica Neue', 'Roboto', 'Arial', sans-serif;
+  border: 1px solid #bdbdbd;
   height: 2rem;
+  width: 11.5rem;
+  padding: 0 0.5rem 0 2rem;
   box-sizing: border-box;
 }
 
