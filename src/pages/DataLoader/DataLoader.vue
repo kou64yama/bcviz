@@ -67,6 +67,8 @@
 <script lang="ts">
 import { ref, watch, computed, onMounted, defineComponent } from 'vue';
 import db, { Raw, BcItem } from '../../data/db';
+import { parse } from './parser';
+import { convert } from './converter';
 
 export default defineComponent({
   props: {
@@ -91,57 +93,30 @@ export default defineComponent({
       count.value = await db.raws.count();
     };
 
-    const loadFile = async (event: DragEvent) => {
-      if (!event.dataTransfer) return;
-
-      const promises = Array.from(event.dataTransfer.files)
+    const loadFiles = async (files: FileList) => {
+      const promises = Array.from(files)
         .filter((file) => file.type === 'text/csv')
         .map(async (file) => {
           const content = await file.text();
-          const rows = content
-            .trim()
-            .split(/\r\n/g)
-            .map<{ raw: Raw; item: BcItem }>((data) => {
-              const columns = data
-                .split(',')
-                .map((column) =>
-                  column.startsWith('"') ? column.slice(1, -1) : column,
-                );
-              const map: Record<string, string> = {};
-              for (let i = 0; i < columns.length; i += 2) {
-                map[columns[i]] = columns[i + 1];
-              }
+          const [raws, items] = parse(content)
+            .map<[Raw, BcItem]>(([record, data]) => {
+              const id = `${record.MO}-${record.DT}-${record.Ti}`;
+              return [
+                { id, data },
+                { id, ...convert(record) },
+              ];
+            })
+            .reduce<[Raw[], BcItem[]]>(
+              ([raws, items], [raw, item]) => [
+                [...raws, raw],
+                [...items, item],
+              ],
+              [[], []],
+            );
 
-              const id = `${map.MO}-${map.DT}-${map.Ti}`;
-              const timestamp = Date.parse(`${map.DT} ${map.Ti}`);
-
-              return {
-                raw: { id, data },
-                item: {
-                  id,
-                  timestamp,
-                  model: map.MO,
-                  age: Number(map.AG),
-                  height: Number(map.Hm),
-                  weight: Number(map.Wk),
-                  bmi: Number(map.MI),
-                  bfp: Number(map.FW),
-                  muscleMass: Number(map.mW),
-                  boneMass: Number(map.bW),
-                  visceralFatLevel: Number(map.IF),
-                  bmr: Number(map.rB),
-                  bodyAge: Number(map.rA),
-                  bodyWaterPercentage: Number(map.ww),
-                },
-              };
-            });
-
-          return db.transaction('rw', db.raws, db.items, async () => {
-            return Promise.all([
-              db.raws.bulkPut(rows.map(({ raw }) => raw)),
-              db.items.bulkPut(rows.map(({ item }) => item)),
-            ]);
-          });
+          return db.transaction('rw', db.raws, db.items, async () =>
+            Promise.all([db.raws.bulkPut(raws), db.items.bulkPut(items)]),
+          );
         });
       await Promise.allSettled(promises);
       await fetchItems();
