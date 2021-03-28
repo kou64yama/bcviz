@@ -38,12 +38,13 @@ export default defineComponent({
   align-items: center;
   border: 0.25rem dashed #e0e0e0;
   border-radius: 1rem;
+  background-color: #f5f5f5;
   color: #9e9e9e;
   font-size: 2rem;
   line-height: 3rem;
 }
 
 .dropMode {
-  background: #eeeeee;
+  background-color: #eeeeee;
 }
 </style>
