@@ -27,6 +27,14 @@ jobs:
         run: npm install -g pnpm
       - run: pnpm install
       - run: pnpm run build
+        env:
+          NODE_ENV: production
+          VITE_FIREBASE_API_KEY: AIzaSyCb7qguIyONBldSGRXiZolhNyHyVezTuPI
+          VITE_FIREBASE_AUTH_DOMAIN: bcviz-6b514.firebaseapp.com
+          VITE_FIREBASE_PROJECT_ID: bcviz-6b514
+          VITE_FIREBASE_STORAGE_BUCKET: bcviz-6b514.appspot.com
+          VITE_FIREBASE_MESSAGING_SENDER_ID: 960890617921
+          VITE_FIREBASE_APP_ID: 1:960890617921:web:32ce3f89d7b3d7841986c0
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
