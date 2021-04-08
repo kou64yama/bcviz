@@ -1,13 +1,16 @@
 <template>
-  <header class="appBar">
+  <v-elevation tag="header" class="appBar" value="4">
     <slot />
-  </header>
+  </v-elevation>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import VElevation from '../VElevation';
 
-export default defineComponent({});
+export default defineComponent({
+  components: { VElevation },
+});
 </script>
 
 <style scoped>
@@ -25,11 +28,11 @@ export default defineComponent({});
   z-index: 1;
 }
 
-:slotted(.appBar > *) {
+.appBar > :deep(*) {
   margin: 0 0.5rem;
 }
 
-:slotted(a) {
+.appBar > :deep(a) {
   color: inherit;
   text-decoration: inherit;
   font-weight: bold;

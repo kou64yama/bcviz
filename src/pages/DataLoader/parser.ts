@@ -47,19 +47,19 @@ export interface BcRecord extends Record<string, string> {
   CS: string;
 }
 
+export const parseLine = (data: string): BcRecord => {
+  const columns = data
+    .split(',')
+    .map((column) => (column.startsWith('"') ? column.slice(1, -1) : column));
+  const record: Record<string, string> = {};
+  for (let i = 0; i < columns.length; i += 2) {
+    record[columns[i]] = columns[i + 1];
+  }
+  return record as BcRecord;
+};
+
 export const parse = (src: string): [BcRecord, string][] =>
   src
     .trim()
     .split(/\r\n/g)
-    .map((row) => {
-      const columns = row
-        .split(',')
-        .map((column) =>
-          column.startsWith('"') ? column.slice(1, -1) : column,
-        );
-      const record: Record<string, string> = {};
-      for (let i = 0; i < columns.length; i += 2) {
-        record[columns[i]] = columns[i + 1];
-      }
-      return [record as BcRecord, row];
-    });
+    .map((row) => [parseLine(row), row]);
