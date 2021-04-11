@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import { defineComponent } from 'vue';
 import VButton from '../VButton';
 
