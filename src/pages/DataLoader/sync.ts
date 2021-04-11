@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import * as uuid from 'uuid';
 import db, { BcItem, Raw } from '../../data/db';
 import { convert } from './converter';

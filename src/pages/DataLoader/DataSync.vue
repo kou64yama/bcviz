@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import { ref, defineComponent } from 'vue';
 import { GoogleSignIn } from '../../components/SignIn';
 import SignOut from '../../components/SignOut';
