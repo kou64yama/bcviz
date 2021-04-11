@@ -1,17 +1,28 @@
 <template>
-  <button class="button" :class="{ flat }">
+  <v-elevation
+    class="button"
+    :class="{ flat, disabled }"
+    :disabled="disabled"
+    :value="flat || depressed ? 0 : 2"
+    :focus="flat || depressed ? 0 : 4"
+    :active="flat || depressed ? 0 : 8"
+  >
     <div class="inner">
       <slot />
     </div>
-  </button>
+  </v-elevation>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import VElevation from '../VElevation';
 
 export default defineComponent({
+  components: { VElevation },
   props: {
+    disabled: { type: Boolean, default: false },
     flat: { type: Boolean, default: false },
+    depressed: { type: Boolean, default: false },
   },
 });
 </script>
@@ -22,7 +33,6 @@ export default defineComponent({
   background-color: #424242;
   color: #ffffff;
   border-radius: 0.125rem;
-  cursor: pointer;
   font: inherit;
   font-weight: bold;
   text-transform: uppercase;
@@ -32,8 +42,12 @@ export default defineComponent({
   padding: 0;
 }
 
-.button:hover::before,
-.button:focus::before {
+.button:not(.disabled) {
+  cursor: pointer;
+}
+
+.button:not(.disabled):hover::before,
+.button:not(.disabled):focus::before {
   content: '';
   display: block;
   position: absolute;
@@ -45,8 +59,8 @@ export default defineComponent({
   background-color: rgba(255, 255, 255, 0.125);
 }
 
-.flat:hover::before,
-.flat:focus::before {
+.flat:not(.disabled):hover::before,
+.flat:not(.disabled):focus::before {
   background-color: rgba(0, 0, 0, 0.125);
 }
 
@@ -58,6 +72,10 @@ export default defineComponent({
 .flat {
   background-color: transparent;
   color: inherit;
+}
+
+.disabled {
+  background-color: #bdbdbd;
 }
 
 .inner {
