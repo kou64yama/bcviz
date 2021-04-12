@@ -90,9 +90,10 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .pagination {
   display: flex;
+  padding: 0.5rem;
 }
 
 .prev,

@@ -52,7 +52,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .container {
   overflow: auto;
 }
@@ -64,12 +64,8 @@ export default defineComponent({
 
 .header {
   background-color: #e0e0e0;
-  border-top: 2px solid #bdbdbd;
+  border-top: 1px solid #bdbdbd;
   border-bottom: 1px solid #bdbdbd;
-}
-
-.body {
-  border-bottom: 2px solid #bdbdbd;
 }
 
 .oddRow {
@@ -81,8 +77,8 @@ export default defineComponent({
 }
 
 .cell {
-  height: 1.75rem;
-  padding: 0 0.5rem;
+  height: 2.25rem;
+  padding: 0 1rem;
   white-space: nowrap;
 }
 

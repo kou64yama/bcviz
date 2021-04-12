@@ -10,7 +10,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({});
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .cardText {
   padding: 1rem;
 }

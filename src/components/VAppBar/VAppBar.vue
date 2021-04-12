@@ -13,7 +13,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .appBar {
   background-color: #424242;
   color: #fff;

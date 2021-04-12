@@ -10,7 +10,7 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style lang="postcss">
 html,
 body,
 #app {

@@ -3,18 +3,26 @@
     <file-loader @completed="fetchItems" />
     <data-sync @completed="fetchItems" />
   </div>
-  <data-viewer :items="items" :count="count" :limit="limit" :offset="offset" />
+  <v-card>
+    <data-viewer
+      :items="items"
+      :count="count"
+      :limit="limit"
+      :offset="offset"
+    />
+  </v-card>
 </template>
 
 <script lang="ts">
 import { ref, watch, onMounted, defineComponent } from 'vue';
+import { VCard } from '../../components/VCard';
 import DataViewer from './DataViewer.vue';
 import FileLoader from './FileLoader.vue';
 import DataSync from './DataSync.vue';
 import db, { BcItem } from '../../data/db';
 
 export default defineComponent({
-  components: { DataViewer, FileLoader, DataSync },
+  components: { VCard, DataViewer, FileLoader, DataSync },
   props: {
     limit: { type: Number, default: 10 },
     offset: { type: Number, default: 0 },
@@ -49,7 +57,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .toolbar {
   margin-bottom: 1rem;
   display: flex;

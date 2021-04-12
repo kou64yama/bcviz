@@ -10,7 +10,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({});
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .main {
   padding-top: 3rem;
   min-height: 100%;

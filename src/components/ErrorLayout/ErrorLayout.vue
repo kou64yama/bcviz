@@ -25,7 +25,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .error {
   height: 100%;
   display: flex;

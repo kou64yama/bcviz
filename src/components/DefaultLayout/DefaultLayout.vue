@@ -32,7 +32,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .container {
   position: relative;
   padding: 1rem;

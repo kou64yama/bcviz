@@ -1,5 +1,5 @@
 <template>
-  <v-elevation class="card" value="24">
+  <v-elevation class="card" :value="elevation">
     <slot />
   </v-elevation>
 </template>
@@ -10,12 +10,15 @@ import VElevation from '../VElevation';
 
 export default defineComponent({
   components: { VElevation },
+  props: {
+    elevation: { type: [String, Number], default: 2 },
+  },
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .card {
-  background-color: #f5f5f5;
-  border-radius: 0.25rem;
+  background-color: #ffffff;
+  border-radius: 0.125rem;
 }
 </style>
