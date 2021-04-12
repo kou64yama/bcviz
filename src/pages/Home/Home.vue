@@ -5,115 +5,134 @@
     <v-date-picker v-model="end" />
   </div>
   <div class="grid">
-    <v-chart
-      class="gridItem"
-      type="line"
-      :datasets="[
-        {
-          label: 'Weight',
-          borderColor: '#64b5f666',
-          backgroundColor: '#64b5f666',
-          data: items.map((item) => ({
-            x: new Date(item.timestamp),
-            y: item.weight,
-          })),
-        },
-      ]"
-      :options="{ scales: { xAxes: [{ type: 'time' }] } }"
-    />
-    <v-chart
-      class="gridItem"
-      type="line"
-      :datasets="[
-        {
-          label: 'BFP',
-          borderColor: '#4dd0e166',
-          backgroundColor: '#4dd0e166',
-          data: items.map((item) => ({
-            x: new Date(item.timestamp),
-            y: item.bfp,
-          })),
-        },
-      ]"
-      :options="{ scales: { xAxes: [{ type: 'time' }] } }"
-    />
-    <v-chart
-      class="gridItem"
-      type="line"
-      :datasets="[
-        {
-          label: 'Visceral Fat Level',
-          borderColor: '#81c78466',
-          backgroundColor: '#81c78466',
-          data: items.map((item) => ({
-            x: new Date(item.timestamp),
-            y: item.visceralFatLevel,
-          })),
-        },
-      ]"
-      :options="{ scales: { xAxes: [{ type: 'time' }] } }"
-    />
-    <v-chart
-      class="gridItem"
-      type="line"
-      :datasets="[
-        {
-          label: 'BMR',
-          borderColor: '#dce77566',
-          backgroundColor: '#dce77566',
-          data: items.map((item) => ({
-            x: new Date(item.timestamp),
-            y: item.bmr,
-          })),
-        },
-      ]"
-      :options="{ scales: { xAxes: [{ type: 'time' }] } }"
-    />
-    <v-chart
-      class="gridItem"
-      type="line"
-      :datasets="[
-        {
-          label: 'Body Age',
-          borderColor: '#ffd54f66',
-          backgroundColor: '#ffd54f66',
-          data: items.map((item) => ({
-            x: new Date(item.timestamp),
-            y: item.bodyAge,
-          })),
-        },
-      ]"
-      :options="{ scales: { xAxes: [{ type: 'time' }] } }"
-    />
-    <v-chart
-      class="gridItem"
-      type="line"
-      :datasets="[
-        {
-          label: 'Body Water Percentage',
-          borderColor: '#ff8a6566',
-          backgroundColor: '#ff8a6566',
-          data: items.map((item) => ({
-            x: new Date(item.timestamp),
-            y: item.bodyWaterPercentage,
-          })),
-        },
-      ]"
-      :options="{ scales: { xAxes: [{ type: 'time' }] } }"
-    />
+    <v-card class="gridItem">
+      <v-card-text>
+        <v-chart
+          type="line"
+          :datasets="[
+            {
+              label: 'Weight',
+              borderColor: '#64b5f666',
+              backgroundColor: '#64b5f666',
+              data: items.map((item) => ({
+                x: new Date(item.timestamp),
+                y: item.weight,
+              })),
+            },
+          ]"
+          :options="{ scales: { xAxes: [{ type: 'time' }] } }"
+        />
+      </v-card-text>
+    </v-card>
+    <v-card class="gridItem">
+      <v-card-text>
+        <v-chart
+          type="line"
+          :datasets="[
+            {
+              label: 'BFP',
+              borderColor: '#4dd0e166',
+              backgroundColor: '#4dd0e166',
+              data: items.map((item) => ({
+                x: new Date(item.timestamp),
+                y: item.bfp,
+              })),
+            },
+          ]"
+          :options="{ scales: { xAxes: [{ type: 'time' }] } }"
+        />
+      </v-card-text>
+    </v-card>
+    <v-card class="gridItem">
+      <v-card-text>
+        <v-chart
+          type="line"
+          :datasets="[
+            {
+              label: 'Visceral Fat Level',
+              borderColor: '#81c78466',
+              backgroundColor: '#81c78466',
+              data: items.map((item) => ({
+                x: new Date(item.timestamp),
+                y: item.visceralFatLevel,
+              })),
+            },
+          ]"
+          :options="{ scales: { xAxes: [{ type: 'time' }] } }"
+        />
+      </v-card-text>
+    </v-card>
+    <v-card class="gridItem">
+      <v-card-text>
+        <v-chart
+          type="line"
+          :datasets="[
+            {
+              label: 'BMR',
+              borderColor: '#dce77566',
+              backgroundColor: '#dce77566',
+              data: items.map((item) => ({
+                x: new Date(item.timestamp),
+                y: item.bmr,
+              })),
+            },
+          ]"
+          :options="{ scales: { xAxes: [{ type: 'time' }] } }"
+        />
+      </v-card-text>
+    </v-card>
+    <v-card class="gridItem">
+      <v-card-text>
+        <v-chart
+          type="line"
+          :datasets="[
+            {
+              label: 'Body Age',
+              borderColor: '#ffd54f66',
+              backgroundColor: '#ffd54f66',
+              data: items.map((item) => ({
+                x: new Date(item.timestamp),
+                y: item.bodyAge,
+              })),
+            },
+          ]"
+          :options="{ scales: { xAxes: [{ type: 'time' }] } }"
+        />
+      </v-card-text>
+    </v-card>
+    <v-card class="gridItem">
+      <v-card-text>
+        <v-chart
+          type="line"
+          :datasets="[
+            {
+              label: 'Body Water Percentage',
+              borderColor: '#ff8a6566',
+              backgroundColor: '#ff8a6566',
+              data: items.map((item) => ({
+                x: new Date(item.timestamp),
+                y: item.bodyWaterPercentage,
+              })),
+            },
+          ]"
+          :options="{ scales: { xAxes: [{ type: 'time' }] } }"
+        />
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 
 <script lang="ts">
 import { ref, watch, onMounted, defineComponent } from 'vue';
 import type { ChartDataSets } from 'chart.js';
+import { VCard, VCardText } from '../../components/VCard';
 import VChart from '../../components/VChart';
 import VDatePicker from '../../components/VDatePicker';
 import db, { BcItem } from '../../data/db';
 
 export default defineComponent({
   name: 'HomePage',
-  components: { VChart, VDatePicker },
+  components: { VCard, VCardText, VChart, VDatePicker },
   setup: () => {
     const now = Date.now();
     const start = ref(
@@ -145,7 +164,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .term {
   text-align: center;
 }
@@ -154,10 +173,11 @@ export default defineComponent({
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0.5rem;
 }
 
 .gridItem {
   width: 32rem;
-  margin: 1rem;
+  margin: 0.5rem;
 }
 </style>

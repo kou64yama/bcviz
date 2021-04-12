@@ -1,11 +1,11 @@
 <template>
   <v-elevation
     class="button"
-    :class="{ flat, disabled }"
+    :class="{ flat, outlined, disabled }"
     :disabled="disabled"
-    :value="flat || depressed ? 0 : 2"
-    :focus="flat || depressed ? 0 : 4"
-    :active="flat || depressed ? 0 : 8"
+    :value="flat || depressed || outlined ? 0 : 2"
+    :focus="flat || depressed || outlined ? 0 : 4"
+    :active="flat || depressed || outlined ? 0 : 8"
   >
     <div class="inner">
       <slot />
@@ -23,11 +23,12 @@ export default defineComponent({
     disabled: { type: Boolean, default: false },
     flat: { type: Boolean, default: false },
     depressed: { type: Boolean, default: false },
+    outlined: { type: Boolean, default: false },
   },
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .button {
   display: inline-flex;
   background-color: #424242;
@@ -72,6 +73,12 @@ export default defineComponent({
 .flat {
   background-color: transparent;
   color: inherit;
+}
+
+.outlined {
+  background-color: transparent;
+  color: #424242;
+  border: 1px solid #bdbdbd;
 }
 
 .disabled {

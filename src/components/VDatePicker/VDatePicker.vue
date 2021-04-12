@@ -18,7 +18,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .datePicker {
   font: inherit;
   border: 1px solid #bdbdbd;

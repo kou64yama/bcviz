@@ -10,7 +10,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({});
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .footer {
   padding: 0 1rem;
 }

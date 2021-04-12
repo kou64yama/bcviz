@@ -10,22 +10,18 @@ import { defineComponent } from 'vue';
 export default defineComponent({});
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .cardActions {
   padding: 0 1rem 1rem 1rem;
   display: flex;
   justify-content: flex-end;
 }
 
-.cardActions > :deep(*) {
-  margin: 0 0.25rem;
+.cardActions > :deep(*:not(:first-child)) {
+  margin-left: 0.25rem;
 }
 
-.cardActions > :deep(*:first-child) {
-  margin-left: 0;
-}
-
-.cardActions > :deep(*:last-child) {
-  margin-right: 0;
+.cardActions > :deep(*:not(:last-child)) {
+  margin-right: 0.25rem;
 }
 </style>

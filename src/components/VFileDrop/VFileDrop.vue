@@ -30,7 +30,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .fileDrop {
   height: 16rem;
   display: flex;

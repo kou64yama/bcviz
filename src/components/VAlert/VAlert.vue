@@ -10,7 +10,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({});
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .alert {
   padding: 1rem;
   background-color: #ff9800;
