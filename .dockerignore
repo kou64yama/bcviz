@@ -1,12 +1,17 @@
-.husky
-.vscode
 .dockerignore
-.editorconfig
-.eslintrc.js
-.gitignore
 Dockerfile
+
+.gitignore
+
+.vscode
+.editorconfig
+
+.husky
+.eslintrc.js
 lint-staged.config.js
 prettier.config.js
+
+.yarnrc
 
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
