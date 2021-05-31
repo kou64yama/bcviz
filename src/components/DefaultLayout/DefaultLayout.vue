@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar>
+  <v-app-bar fixed>
     <span>Bcviz</span>
     <router-link to="/">Home</router-link>
     <router-link to="/data">Data</router-link>
