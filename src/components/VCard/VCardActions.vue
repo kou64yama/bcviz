@@ -1,27 +1,15 @@
 <template>
-  <div class="cardActions">
+  <div class="px-4 pb-4 flex justify-end">
     <slot />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({});
-</script>
-
 <style lang="postcss" scoped>
-.cardActions {
-  padding: 0 1rem 1rem 1rem;
-  display: flex;
-  justify-content: flex-end;
+:deep(> *:not(:first-child)) {
+  @apply ml-1;
 }
 
-.cardActions > :deep(*:not(:first-child)) {
-  margin-left: 0.25rem;
-}
-
-.cardActions > :deep(*:not(:last-child)) {
-  margin-right: 0.25rem;
+:deep(> *:not(:last-child)) {
+  @apply mr-1;
 }
 </style>
