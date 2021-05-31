@@ -7,7 +7,7 @@
         <v-file-drop @drop:files="loadFiles" />
       </v-card-text>
       <v-card-actions>
-        <v-button flat @click="open = false">Close</v-button>
+        <v-button text @click="open = false">Close</v-button>
       </v-card-actions>
     </v-card>
   </v-dialog>
