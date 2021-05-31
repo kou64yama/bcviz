@@ -5,7 +5,7 @@
     <router-link to="/data">Data</router-link>
   </v-app-bar>
   <v-main>
-    <div class="container">
+    <div class="container mx-auto min-h-screen p-4 border-box">
       <router-view />
     </div>
   </v-main>
@@ -31,12 +31,3 @@ export default defineComponent({
   components: { VAppBar, VFooter, VMain },
 });
 </script>
-
-<style lang="postcss" scoped>
-.container {
-  position: relative;
-  padding: 1rem;
-  min-height: 100%;
-  box-sizing: border-box;
-}
-</style>

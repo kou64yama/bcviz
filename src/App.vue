@@ -11,16 +11,16 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
-body,
-#app {
-  height: 100%;
+body {
+  @apply h-full;
 }
 
-body {
-  margin: 0;
-  font: 16px/1.5 'Helvetica Neue', 'Roboto', 'Arial', sans-serif;
-  background-color: #f5f5f5;
-  color: #424242;
+#app {
+  @apply min-h-screen;
 }
 </style>

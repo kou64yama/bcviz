@@ -1,4 +1,3 @@
-import { NotFound } from 'http-errors';
 import { LocationQueryValue, RouteRecordRaw } from 'vue-router';
 import DefaultLayout from './components/DefaultLayout';
 import ErrorLayout from './components/ErrorLayout';
@@ -35,7 +34,7 @@ const routes: RouteRecordRaw[] = [
     path: '/:pathMatch(.*)*',
     component: ErrorLayout,
     props: () => ({
-      error: new NotFound('Page not found'),
+      error: Object.assign(new Error('Page not found'), { statusCode: 404 }),
     }),
   },
 ];
