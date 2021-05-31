@@ -1,11 +1,11 @@
 <template>
-  <div class="term">
+  <div class="grid grid-flow-col auto-cols-min justify-center gap-1 mb-4">
     <v-date-picker v-model="start" />
-    ...
+    <span>...</span>
     <v-date-picker v-model="end" />
   </div>
-  <div class="grid">
-    <v-card class="gridItem">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <v-card>
       <v-card-text>
         <v-chart
           type="line"
@@ -24,7 +24,7 @@
         />
       </v-card-text>
     </v-card>
-    <v-card class="gridItem">
+    <v-card>
       <v-card-text>
         <v-chart
           type="line"
@@ -43,7 +43,7 @@
         />
       </v-card-text>
     </v-card>
-    <v-card class="gridItem">
+    <v-card>
       <v-card-text>
         <v-chart
           type="line"
@@ -62,7 +62,7 @@
         />
       </v-card-text>
     </v-card>
-    <v-card class="gridItem">
+    <v-card>
       <v-card-text>
         <v-chart
           type="line"
@@ -81,7 +81,7 @@
         />
       </v-card-text>
     </v-card>
-    <v-card class="gridItem">
+    <v-card>
       <v-card-text>
         <v-chart
           type="line"
@@ -100,7 +100,7 @@
         />
       </v-card-text>
     </v-card>
-    <v-card class="gridItem">
+    <v-card>
       <v-card-text>
         <v-chart
           type="line"
@@ -163,21 +163,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="postcss" scoped>
-.term {
-  text-align: center;
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0.5rem;
-}
-
-.gridItem {
-  width: 32rem;
-  margin: 0.5rem;
-}
-</style>
