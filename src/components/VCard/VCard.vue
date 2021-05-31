@@ -1,5 +1,5 @@
 <template>
-  <v-elevation class="card" :value="elevation">
+  <v-elevation class="card" :depth="elevation">
     <slot />
   </v-elevation>
 </template>

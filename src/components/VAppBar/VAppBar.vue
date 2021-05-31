@@ -1,5 +1,5 @@
 <template>
-  <v-elevation tag="header" class="appBar" value="4">
+  <v-elevation tag="header" class="appBar" depth="3">
     <slot />
   </v-elevation>
 </template>
@@ -25,7 +25,6 @@ export default defineComponent({
   right: 0;
   display: flex;
   align-items: center;
-  z-index: 1;
 }
 
 .appBar > :deep(*) {

@@ -3,9 +3,7 @@
     class="button"
     :class="{ flat, outlined, disabled }"
     :disabled="disabled"
-    :value="flat || depressed || outlined ? 0 : 2"
-    :focus="flat || depressed || outlined ? 0 : 4"
-    :active="flat || depressed || outlined ? 0 : 8"
+    :depth="flat || depressed || outlined ? 0 : 2"
   >
     <div class="inner">
       <slot />
