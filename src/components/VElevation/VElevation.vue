@@ -1,19 +1,12 @@
 <template>
-  <component
-    :is="tag"
-    class="elevation"
-    :class="{
-      [`z-${depth}0`]: true,
-      [valueToShadow(depth)]: true,
-    }"
-  >
+  <component :is="tag" :class="`${toZIndex(depth)} ${toShadow(depth)}`">
     <slot />
   </component>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { depthType, validator, valueToShadow } from './helpers';
+import { depthType, validator, toShadow, toZIndex } from './helpers';
 
 export default defineComponent({
   props: {
@@ -21,7 +14,8 @@ export default defineComponent({
     tag: { type: String, default: 'div' },
   },
   setup: () => ({
-    valueToShadow,
+    toShadow,
+    toZIndex,
   }),
 });
 </script>
