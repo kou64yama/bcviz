@@ -1,5 +1,7 @@
 <template>
-  <div class="grid grid-flow-col auto-cols-min justify-center gap-1 mb-4">
+  <div
+    class="grid grid-flow-col auto-cols-min justify-center items-center gap-1 mb-4"
+  >
     <v-date-picker v-model="start" />
     <span>...</span>
     <v-date-picker v-model="end" />
