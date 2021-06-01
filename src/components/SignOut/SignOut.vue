@@ -5,17 +5,14 @@
 </template>
 
 <script lang="ts">
-import firebase from 'firebase/app';
 import { defineComponent } from 'vue';
 import VButton from '../VButton';
+import { signOut } from './helpers';
 
 export default defineComponent({
   components: { VButton },
-  setup: () => {
-    const signOut = () => firebase.auth().signOut();
-    return {
-      signOut,
-    };
-  },
+  setup: () => ({
+    signOut,
+  }),
 });
 </script>
