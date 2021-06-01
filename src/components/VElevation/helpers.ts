@@ -8,7 +8,23 @@ export const validator = (depth: Depth): boolean => {
   return Number.isInteger(depth) && 0 <= depth && depth <= 5;
 };
 
-const shadows = [
+type DepthMap<T> = [T, T, T, T, T, T];
+
+const zIndicies: DepthMap<string> = [
+  'z-0',
+  'z-10',
+  'z-20',
+  'z-30',
+  'z-40',
+  'z-50',
+];
+
+export const toZIndex = (depth: Depth): string => {
+  if (typeof depth === 'string') return toZIndex(parseInt(depth, 10));
+  return zIndicies[depth];
+};
+
+const shadows: DepthMap<string> = [
   'shadow-none',
   'shadow-sm',
   'shadow',
@@ -17,7 +33,7 @@ const shadows = [
   'shadow-2xl',
 ];
 
-export const valueToShadow = (depth: Depth): string => {
-  if (typeof depth === 'string') return valueToShadow(parseInt(depth, 10));
+export const toShadow = (depth: Depth): string => {
+  if (typeof depth === 'string') return toShadow(parseInt(depth, 10));
   return shadows[depth];
 };
