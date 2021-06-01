@@ -1,17 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="px-4 bg-white">
     <slot />
   </footer>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({});
-</script>
-
-<style lang="postcss" scoped>
-.footer {
-  padding: 0 1rem;
-}
-</style>

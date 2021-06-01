@@ -4,7 +4,7 @@
     <router-link to="/">Home</router-link>
     <router-link to="/data">Data</router-link>
   </v-app-bar>
-  <v-main>
+  <v-main class="bg-gray-50">
     <div class="container mx-auto min-h-screen p-4 border-box">
       <router-view />
     </div>
@@ -12,6 +12,7 @@
   <v-footer>
     <a href="/humans.txt">
       <img
+        class="inline-block"
         src="../../assets/humanstxt-isolated-blank.gif"
         alt="Humans.txt"
         width="88"
