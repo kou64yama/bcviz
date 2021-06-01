@@ -1,19 +1,5 @@
 <template>
-  <div class="alert">
+  <div class="p-4 bg-yellow-500 text-white">
     <slot />
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({});
-</script>
-
-<style lang="postcss" scoped>
-.alert {
-  padding: 1rem;
-  background-color: #ff9800;
-  color: #ffffff;
-}
-</style>

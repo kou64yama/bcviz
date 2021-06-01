@@ -1,6 +1,6 @@
 <template>
   <input
-    class="datePicker"
+    class="border border-gray-400 rounded px-2 w-40 h-12"
     type="date"
     :value="modelValue"
     @input="(event) => $emit('update:modelValue', event.target.value)"
@@ -17,19 +17,3 @@ export default defineComponent({
   emits: ['update:modelValue'],
 });
 </script>
-
-<style lang="postcss" scoped>
-.datePicker {
-  font: inherit;
-  border: 1px solid #bdbdbd;
-  height: 2rem;
-  width: 11.5rem;
-  padding: 0 0.5rem 0 2rem;
-  box-sizing: border-box;
-}
-
-.datePicker:hover,
-.datePicker:focus {
-  outline: none;
-}
-</style>

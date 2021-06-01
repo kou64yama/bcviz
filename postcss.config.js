@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: [require('postcss-for'), require('postcss-calc')],
+  plugins: [require('autoprefixer'), require('tailwindcss')],
 };

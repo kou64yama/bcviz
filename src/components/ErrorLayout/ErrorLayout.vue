@@ -1,39 +1,27 @@
 <template>
-  <main class="error">
-    <div class="container">
-      <h1 v-text="error.message" />
+  <div class="container mx-auto min-h-screen flex items-center justify-center">
+    <div>
+      <h1 class="text-5xl mb-8" v-text="error.message" />
       <p v-if="error.statusCode === 404">
         Sorry, the page you were trying to view does not exist.
       </p>
-      <div>
-        <a href="#" @click.prevent="back">Back</a>
-      </div>
-      <div>
-        <router-link to="/"> Go to the top page </router-link>
-      </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
+
+interface StatusCode {
+  statusCode: number;
+}
 
 export default defineComponent({
   props: {
-    error: { type: Error, default: () => new Error() },
+    error: {
+      type: Error as PropType<Error & Partial<StatusCode>>,
+      default: () => new Error(),
+    },
   },
 });
 </script>
-
-<style lang="postcss" scoped>
-.error {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  padding: 1rem;
-}
-</style>

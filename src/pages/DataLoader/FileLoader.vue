@@ -1,13 +1,13 @@
 <template>
   <v-button @click="open = true">Load CSV</v-button>
   <v-dialog v-model:open="open">
-    <v-card elevation="24">
+    <v-card elevation="5">
       <v-card-title>Load CSV</v-card-title>
       <v-card-text>
         <v-file-drop @drop:files="loadFiles" />
       </v-card-text>
       <v-card-actions>
-        <v-button flat @click="open = false">Close</v-button>
+        <v-button text @click="open = false">Close</v-button>
       </v-card-actions>
     </v-card>
   </v-dialog>

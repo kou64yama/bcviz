@@ -1,27 +1,24 @@
 <template>
-  <div class="container">
-    <table class="table">
-      <thead class="header">
+  <div class="overflow-auto">
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-gray-50">
         <tr>
           <th
             v-for="header in headers"
             :key="header.value"
-            class="cell"
+            class="px-6 py-2 whitespace-nowrap text-xs font-medium text-gray-500 uppercase tracking-wider"
+            scope="col"
             v-text="header.text"
           />
         </tr>
       </thead>
-      <tbody class="body">
-        <tr
-          v-for="(item, i) in items"
-          :key="i"
-          :class="i % 2 === 0 ? 'evenRow' : 'oddRow'"
-        >
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr v-for="(item, i) in items" :key="i">
           <td
             v-for="header in headers"
             :key="header.value"
-            class="cell"
-            :class="{ [typeof item[header.value]]: true }"
+            class="px-6 py-2 whitespace-nowrap text-sm text-gray-500"
+            :class="{ 'text-right': typeof item[header.value] === 'number' }"
           >
             <slot :name="`items:${header.value}`" v-bind="{ item }">
               {{ item[header.value] }}
@@ -34,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 
 interface Header {
   text: string;
@@ -43,46 +40,11 @@ interface Header {
 
 export default defineComponent({
   props: {
-    headers: { type: Array as () => Header[], default: () => [] },
+    headers: { type: Array as PropType<Header[]>, default: () => [] },
     items: {
-      type: Array as () => Record<string, unknown>[],
+      type: Array as PropType<Record<string, unknown>[]>,
       default: () => [],
     },
   },
 });
 </script>
-
-<style lang="postcss" scoped>
-.container {
-  overflow: auto;
-}
-
-.table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.header {
-  background-color: #e0e0e0;
-  border-top: 1px solid #bdbdbd;
-  border-bottom: 1px solid #bdbdbd;
-}
-
-.oddRow {
-  background-color: #eeeeee;
-}
-
-.evenRow {
-  background-color: #ffffff;
-}
-
-.cell {
-  height: 2.25rem;
-  padding: 0 1rem;
-  white-space: nowrap;
-}
-
-.number {
-  text-align: right;
-}
-</style>

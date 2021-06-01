@@ -1,17 +1,18 @@
 <template>
-  <v-app-bar>
+  <v-app-bar fixed>
     <span>Bcviz</span>
     <router-link to="/">Home</router-link>
     <router-link to="/data">Data</router-link>
   </v-app-bar>
-  <v-main>
-    <div class="container">
+  <v-main class="bg-gray-50">
+    <div class="container mx-auto min-h-screen p-4 border-box">
       <router-view />
     </div>
   </v-main>
   <v-footer>
     <a href="/humans.txt">
       <img
+        class="inline-block"
         src="../../assets/humanstxt-isolated-blank.gif"
         alt="Humans.txt"
         width="88"
@@ -31,12 +32,3 @@ export default defineComponent({
   components: { VAppBar, VFooter, VMain },
 });
 </script>
-
-<style lang="postcss" scoped>
-.container {
-  position: relative;
-  padding: 1rem;
-  min-height: 100%;
-  box-sizing: border-box;
-}
-</style>

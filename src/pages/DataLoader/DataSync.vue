@@ -1,7 +1,7 @@
 <template>
   <v-button @click="open = true">Sync data</v-button>
   <v-dialog v-model:open="open">
-    <v-card elevation="24">
+    <v-card elevation="5">
       <v-card-title style="padding-bottom: 1rem">Data Sync</v-card-title>
       <v-alert>
         This feature is <strong>under development</strong>. Note that the data
@@ -19,15 +19,15 @@
             <div class="email" v-text="user.email" />
           </div>
           <div style="flex: 1" />
-          <sign-out flat>Sign out</sign-out>
+          <sign-out text>Sign out</sign-out>
         </div>
         <div v-else>
-          <google-sign-in flat>Sign in with Google</google-sign-in>
+          <google-sign-in text>Sign in with Google</google-sign-in>
         </div>
       </v-card-text>
       <v-card-actions>
-        <v-button flat @click="open = false">Cancel</v-button>
-        <v-button flat :disabled="user === null" @click="syncData"
+        <v-button text @click="open = false">Cancel</v-button>
+        <v-button text :disabled="user === null" @click="syncData"
           >Sync</v-button
         >
       </v-card-actions>

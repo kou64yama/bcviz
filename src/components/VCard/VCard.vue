@@ -1,5 +1,5 @@
 <template>
-  <v-elevation class="card" :value="elevation">
+  <v-elevation class="bg-white rounded-sm" :depth="elevation">
     <slot />
   </v-elevation>
 </template>
@@ -15,10 +15,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="postcss" scoped>
-.card {
-  background-color: #ffffff;
-  border-radius: 0.125rem;
-}
-</style>

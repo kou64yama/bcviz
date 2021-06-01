@@ -1,6 +1,6 @@
 <template>
   <teleport to="#dialogs">
-    <div v-if="open" class="overlay" @click="$emit('update:open', !open)">
+    <div v-if="open" class="overlay z-40" @click="$emit('update:open', !open)">
       <div class="dialog" @click.stop>
         <slot />
       </div>
@@ -44,7 +44,6 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
 }
 
 .dialog {
