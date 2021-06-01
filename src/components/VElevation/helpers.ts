@@ -10,7 +10,7 @@ export const validator = (depth: Depth): boolean => {
 
 type DepthMap<T> = [T, T, T, T, T, T];
 
-const zIndecies: DepthMap<string> = [
+const zIndicies: DepthMap<string> = [
   'z-0',
   'z-10',
   'z-20',
@@ -21,7 +21,7 @@ const zIndecies: DepthMap<string> = [
 
 export const toZIndex = (depth: Depth): string => {
   if (typeof depth === 'string') return toZIndex(parseInt(depth, 10));
-  return zIndecies[depth];
+  return zIndicies[depth];
 };
 
 const shadows: DepthMap<string> = [
