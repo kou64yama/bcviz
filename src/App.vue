@@ -23,4 +23,8 @@ body {
 #app {
   @apply min-h-screen;
 }
+
+a {
+  @apply underline text-blue-600 hover:text-blue-800;
+}
 </style>

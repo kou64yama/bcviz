@@ -27,6 +27,6 @@ export default defineComponent({
 }
 
 :deep(> a) {
-  @apply font-bold;
+  @apply font-bold no-underline text-white opacity-95 hover:text-white hover:opacity-100;
 }
 </style>
