@@ -1,6 +1,6 @@
 <template>
   <v-button @click="open = true">Sync data</v-button>
-  <v-dialog v-model:open="open">
+  <v-dialog v-model="open">
     <v-card elevation="5">
       <v-card-title style="padding-bottom: 1rem">Data Sync</v-card-title>
       <v-alert>
