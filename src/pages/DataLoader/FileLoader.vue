@@ -1,6 +1,6 @@
 <template>
   <v-button @click="open = true">Load CSV</v-button>
-  <v-dialog v-model:open="open">
+  <v-dialog v-model="open">
     <v-card elevation="5">
       <v-card-title>Load CSV</v-card-title>
       <v-card-text>
