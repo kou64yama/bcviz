@@ -60,9 +60,9 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
 import { formatISO9075 } from 'date-fns/fp';
 import numeral from 'numeral';
+import { computed, defineComponent } from 'vue';
 import VDataTable from '../../components/VDataTable';
 import { BcItem } from '../../data/db';
 

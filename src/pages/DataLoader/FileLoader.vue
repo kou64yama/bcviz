@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import VButton from '../../components/VButton';
 import {
   VCard,
@@ -24,9 +24,9 @@ import {
 } from '../../components/VCard';
 import VDialog from '../../components/VDialog';
 import VFileDrop from '../../components/VFileDrop';
-import db, { Raw, BcItem } from '../../data/db';
-import { parse } from './parser';
+import db, { BcItem, Raw } from '../../data/db';
 import { convert } from './converter';
+import { parse } from './parser';
 
 export default defineComponent({
   components: {

@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { depthType, validator, toShadow, toZIndex } from './helpers';
+import { depthType, toShadow, toZIndex, validator } from './helpers';
 
 export default defineComponent({
   props: {

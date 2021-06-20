@@ -14,12 +14,12 @@
 </template>
 
 <script lang="ts">
-import { ref, watch, onMounted, defineComponent } from 'vue';
+import { defineComponent, onMounted, ref, watch } from 'vue';
 import { VCard } from '../../components/VCard';
+import db, { BcItem } from '../../data/db';
+import DataSync from './DataSync.vue';
 import DataViewer from './DataViewer.vue';
 import FileLoader from './FileLoader.vue';
-import DataSync from './DataSync.vue';
-import db, { BcItem } from '../../data/db';
 
 export default defineComponent({
   components: { VCard, DataViewer, FileLoader, DataSync },

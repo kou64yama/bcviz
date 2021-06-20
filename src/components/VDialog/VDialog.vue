@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { watch, toRefs, defineComponent } from 'vue';
+import { defineComponent, toRefs, watch } from 'vue';
 import VOverlay from '../VOverlay';
 
 export default defineComponent({
