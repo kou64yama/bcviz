@@ -125,8 +125,8 @@
 </template>
 
 <script lang="ts">
-import { ref, watch, onMounted, defineComponent } from 'vue';
 import type { ChartDataSets } from 'chart.js';
+import { defineComponent, onMounted, ref, watch } from 'vue';
 import { VCard, VCardText } from '../../components/VCard';
 import VChart from '../../components/VChart';
 import VDatePicker from '../../components/VDatePicker';

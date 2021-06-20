@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { ref, watch, onMounted, onBeforeUnmount, defineComponent } from 'vue';
 import Chart, { ChartDataSets, ChartOptions } from 'chart.js';
+import { defineComponent, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 
 export default defineComponent({
   props: {
