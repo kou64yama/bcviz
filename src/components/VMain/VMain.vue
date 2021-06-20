@@ -1,19 +1,5 @@
 <template>
-  <main class="main">
+  <main class="pt-12 min-h-full border-box">
     <slot />
   </main>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({});
-</script>
-
-<style lang="postcss" scoped>
-.main {
-  padding-top: 3rem;
-  min-height: 100%;
-  box-sizing: border-box;
-}
-</style>
