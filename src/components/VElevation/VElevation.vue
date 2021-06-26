@@ -1,21 +1,20 @@
 <template>
-  <component :is="tag" :class="`${toZIndex(depth)} ${toShadow(depth)}`">
+  <component :is="tag" :class="{ [style.shadow]: true, [style.zIndex]: true }">
     <slot />
   </component>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { depthType, toShadow, toZIndex, validator } from './helpers';
+import { computed, defineComponent } from 'vue';
+import { toStyle, validateDepth } from './helpers';
 
 export default defineComponent({
   props: {
-    depth: { type: depthType, default: 0, validator },
+    depth: { type: [Number, String], default: 0, validateDepth },
     tag: { type: String, default: 'div' },
   },
-  setup: () => ({
-    toShadow,
-    toZIndex,
+  setup: (props) => ({
+    style: computed(() => toStyle(props.depth)),
   }),
 });
 </script>

@@ -1,15 +1,7 @@
-import { LocationQueryValue, RouteRecordRaw } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 import DefaultLayout from './components/DefaultLayout';
 import ErrorLayout from './components/ErrorLayout';
-
-const first = (value: LocationQueryValue | LocationQueryValue[] | undefined) =>
-  Array.isArray(value) ? value[0] : value;
-
-const number = (value: LocationQueryValue | undefined) => {
-  if (!value) return undefined;
-  const num = Number(value);
-  return Number.isFinite(num) ? num : undefined;
-};
+import { first, number } from './helpers/fns';
 
 const routes: RouteRecordRaw[] = [
   {
