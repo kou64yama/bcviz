@@ -1,20 +1,20 @@
 <template>
-  <router-view />
+  <context-provider>
+    <router-view />
+  </context-provider>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import ContextProvider from './components/ContextProvider';
 
 export default defineComponent({
   name: 'App',
+  components: { ContextProvider },
 });
 </script>
 
 <style lang="postcss">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 html,
 body {
   @apply h-full;
