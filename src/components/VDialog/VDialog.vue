@@ -10,8 +10,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs, watch } from 'vue';
+import { defineComponent, toRefs, watch, onMounted } from 'vue';
 import VOverlay from '../VOverlay';
+import { makeOverflowSwitcher } from './helpers';
 
 export default defineComponent({
   components: {
@@ -23,17 +24,9 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup: (props) => {
     const { modelValue } = toRefs(props);
-
-    let overflow = '';
-
-    watch(modelValue, (value) => {
-      if (value) {
-        overflow = document.body.style.overflow;
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = overflow;
-      }
-    });
+    const switcher = makeOverflowSwitcher();
+    onMounted(switcher.init);
+    watch(modelValue, switcher.switch);
   },
 });
 </script>

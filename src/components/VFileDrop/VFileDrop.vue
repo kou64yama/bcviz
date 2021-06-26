@@ -1,7 +1,7 @@
 <template>
   <div
-    class="fileDrop"
-    :class="{ dropMode }"
+    class="flex justify-center items-center border-4 border-gray-200 border-dashed rounded-2xl bg-gray-50 text-gray-400 h-64 text-3xl"
+    :class="{ 'bg-gray-100': dropMode }"
     @dragenter.stop.prevent="dropMode = true"
     @dragleave.stop.prevent="dropMode = false"
     @dragover.stop.prevent
@@ -13,38 +13,16 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import { onFileList } from './helpers';
 
 export default defineComponent({
-  emits: ['drop:files'],
-  setup: (_props, { emit }) => {
+  emits: {
+    'drop:files': (files: FileList) => files instanceof FileList,
+  },
+  setup: (_, { emit }) => {
     const dropMode = ref(false);
-
-    const onDrop = (event: DragEvent) => {
-      dropMode.value = false;
-      if (!event.dataTransfer) return;
-
-      emit('drop:files', event.dataTransfer.files);
-    };
+    const onDrop = onFileList(emit.bind(null, 'drop:files'));
     return { dropMode, onDrop };
   },
 });
 </script>
-
-<style lang="postcss" scoped>
-.fileDrop {
-  height: 16rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 0.25rem dashed #e0e0e0;
-  border-radius: 1rem;
-  background-color: #f5f5f5;
-  color: #9e9e9e;
-  font-size: 2rem;
-  line-height: 3rem;
-}
-
-.dropMode {
-  background-color: #eeeeee;
-}
-</style>
