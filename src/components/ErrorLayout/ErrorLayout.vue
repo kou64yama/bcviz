@@ -11,16 +11,13 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-
-interface StatusCode {
-  statusCode: number;
-}
+import { ErrorDetails } from './ErrorDetails';
 
 export default defineComponent({
   props: {
     error: {
-      type: Error as PropType<Error & Partial<StatusCode>>,
-      default: () => new Error(),
+      type: Object as PropType<ErrorDetails>,
+      required: true,
     },
   },
 });

@@ -1,16 +1,17 @@
 <template>
-  <context-provider>
+  <v-app>
     <router-view />
-  </context-provider>
+  </v-app>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ContextProvider from './components/ContextProvider';
+
+import VApp from './components/VApp/VApp.vue';
 
 export default defineComponent({
   name: 'App',
-  components: { ContextProvider },
+  components: { VApp },
 });
 </script>
 
