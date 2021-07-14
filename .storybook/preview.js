@@ -1,11 +1,16 @@
 import { addDecorator } from '@storybook/vue3';
 import { defineComponent } from 'vue';
-import ContextProvider from '../src/components/ContextProvider';
+import VApp from '../src/components/VApp';
 
 addDecorator(() =>
   defineComponent({
-    components: { ContextProvider },
-    template: `<context-provider><story /></context-provider>`,
+    inheritAttrs: false,
+    components: { VApp },
+    template: `
+      <v-app>
+        <story v-bind="$props" v-on="$props" />
+      </v-app>
+    `,
   }),
 );
 

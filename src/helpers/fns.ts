@@ -18,7 +18,7 @@ export const first = <T>(value: T | T[]): T | undefined =>
  * @param value The value
  * @returns The parsed value
  */
-export const number = <T>(value: T): number | undefined => {
-  const num = Number(value);
-  return !Number.isNaN(num) ? num : undefined;
+export const number = (value: unknown): number | undefined => {
+  if (typeof value !== 'number') return number(Number(value));
+  return !Number.isNaN(value) ? value : undefined;
 };

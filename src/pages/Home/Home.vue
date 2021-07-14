@@ -2,9 +2,9 @@
   <div
     class="grid grid-flow-col auto-cols-min justify-center items-center gap-1 mb-4"
   >
-    <v-date-picker v-model="start" />
+    <v-text-field v-model="start" type="date" />
     <span>...</span>
-    <v-date-picker v-model="end" />
+    <v-text-field v-model="end" type="date" />
   </div>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     <v-card>
@@ -129,12 +129,12 @@ import type { ChartDataSets } from 'chart.js';
 import { defineComponent, onMounted, ref, watch } from 'vue';
 import { VCard, VCardText } from '../../components/VCard';
 import VChart from '../../components/VChart';
-import VDatePicker from '../../components/VDatePicker';
+import VTextField from '../../components/VTextField';
 import db, { BcItem } from '../../data/db';
 
 export default defineComponent({
   name: 'HomePage',
-  components: { VCard, VCardText, VChart, VDatePicker },
+  components: { VCard, VCardText, VChart, VTextField },
   setup: () => {
     const now = Date.now();
     const start = ref(

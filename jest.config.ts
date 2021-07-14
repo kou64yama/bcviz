@@ -16,7 +16,7 @@ const config: Config.InitialOptions = {
   // cacheDirectory: "/private/var/folders/7l/0n3vm2ys23v_7b3cwqy_b6040000gn/T/jest_dx",
 
   // Automatically clear mock calls and instances between every test
-  // clearMocks: false,
+  clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
@@ -26,6 +26,7 @@ const config: Config.InitialOptions = {
     'src/**/*.{ts,tsx,js,jsx}',
     '!src/main.ts',
     '!src/routes.ts',
+    '!src/**/*.stories.{ts,js}',
   ],
 
   // The directory where Jest should output its coverage files
